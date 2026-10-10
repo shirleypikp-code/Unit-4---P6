@@ -1,0 +1,6 @@
+{
+  "name": "LexiQuest: Spaced Repetition Vocabulary Arena",
+  "description": "An interactive vocabulary learning adventure featuring spaced repetition, game activities, streak tracking, word battle challenges, and offline practice for mastering essential vocabulary.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
