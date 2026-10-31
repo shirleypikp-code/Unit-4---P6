@@ -114,14 +114,14 @@ export const BADGES: Badge[] = [
 ];
 
 export const INITIAL_LEADERBOARD: LeaderboardUser[] = [
-  { id: '1', name: 'Aria Nightingale', avatar: '🦊', xp: 2450, streak: 14, wordsMastered: 19, badge: 'Diamond Master' },
-  { id: '2', name: 'Marcus Sterling', avatar: '🦉', xp: 2180, streak: 9, wordsMastered: 17, badge: 'Gold Scholar' },
-  { id: '3', name: 'Elena Rostova', avatar: '🐯', xp: 1890, streak: 8, wordsMastered: 15, badge: 'Silver Ace' },
-  { id: '4', name: 'Kai Takahashi', avatar: '🐼', xp: 1420, streak: 5, wordsMastered: 12, badge: 'Silver Ace' },
-  { id: '5', name: 'You (Champion)', avatar: '🚀', xp: 350, streak: 1, wordsMastered: 3, badge: 'Rising Star', isCurrentUser: true },
-  { id: '6', name: 'Zoe Chen', avatar: '🐨', xp: 310, streak: 2, wordsMastered: 3, badge: 'Cadet' },
-  { id: '7', name: 'Oliver Twist', avatar: '🦁', xp: 240, streak: 1, wordsMastered: 2, badge: 'Cadet' },
-  { id: '8', name: 'Maya Lin', avatar: '🦄', xp: 190, streak: 1, wordsMastered: 1, badge: 'New Explorer' },
+  { id: '1', name: 'Aria Nightingale', avatar: '🦊', xp: 2450, streak: 14, wordsMastered: 19, badge: 'Diamond Master', studentClass: '6A' },
+  { id: '2', name: 'Marcus Sterling', avatar: '🦉', xp: 2180, streak: 9, wordsMastered: 17, badge: 'Gold Scholar', studentClass: '6B' },
+  { id: '3', name: 'Elena Rostova', avatar: '🐯', xp: 1890, streak: 8, wordsMastered: 15, badge: 'Silver Ace', studentClass: '5A' },
+  { id: '4', name: 'Kai Takahashi', avatar: '🐼', xp: 1420, streak: 5, wordsMastered: 12, badge: 'Silver Ace', studentClass: '6A' },
+  { id: '5', name: 'You (Champion)', avatar: '🚀', xp: 350, streak: 1, wordsMastered: 3, badge: 'Rising Star', studentClass: '', isCurrentUser: true },
+  { id: '6', name: 'Zoe Chen', avatar: '🐨', xp: 310, streak: 2, wordsMastered: 3, badge: 'Cadet', studentClass: '5B' },
+  { id: '7', name: 'Oliver Twist', avatar: '🦁', xp: 240, streak: 1, wordsMastered: 2, badge: 'Cadet', studentClass: '5A' },
+  { id: '8', name: 'Maya Lin', avatar: '🦄', xp: 190, streak: 1, wordsMastered: 1, badge: 'New Explorer', studentClass: '4C' },
 ];
 
 export function getTodayDateString(): string {
@@ -171,6 +171,9 @@ export function loadUserStats(): UserStats {
     streakFreezeAvailable: 1,
     soundEnabled: true,
     unlockedBadgeIds: ['first_spark'],
+    studentName: '',
+    studentClass: '',
+    studentAvatar: '🚀',
   };
 }
 

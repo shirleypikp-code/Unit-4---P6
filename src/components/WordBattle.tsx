@@ -211,7 +211,10 @@ export const WordBattle: React.FC<WordBattleProps> = ({
   // Social Share Action
   const handleShareChallenge = async () => {
     soundManager.playClick();
-    const shareText = `⚔️ I scored ${challengeScore} pts in a LexiQuest Vocabulary Battle! Can you beat me on all ${VOCABULARY_WORDS.length} target words? Challenge Code: ${customChallengeCode}`;
+    const studentIdentity = stats.studentName
+      ? `${stats.studentName}${stats.studentClass ? ` (${stats.studentClass})` : ''}`
+      : 'I';
+    const shareText = `⚔️ ${studentIdentity} scored ${challengeScore} pts in a LexiQuest Vocabulary Battle! Can you beat this score on all ${VOCABULARY_WORDS.length} target words? Challenge Code: ${customChallengeCode}`;
     const shareUrl = window.location.href;
 
     if (navigator.share) {
@@ -396,10 +399,16 @@ export const WordBattle: React.FC<WordBattleProps> = ({
             {/* Player Side */}
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-white text-sm flex items-center gap-1.5">
-                  <span className="text-lg">🚀</span> You
+                <span className="font-bold text-white text-sm flex items-center gap-1.5 truncate">
+                  <span className="text-lg">{stats.studentAvatar || '🚀'}</span>
+                  <span className="truncate">{stats.studentName || 'You'}</span>
+                  {stats.studentClass && (
+                    <span className="text-xs text-slate-400 font-normal hidden sm:inline">
+                      · {stats.studentClass}
+                    </span>
+                  )}
                 </span>
-                <span className="font-mono text-xs font-bold text-amber-300">{playerScore} pts</span>
+                <span className="font-mono text-xs font-bold text-amber-300 shrink-0">{playerScore} pts</span>
               </div>
               <div className="w-full h-3 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
                 <div

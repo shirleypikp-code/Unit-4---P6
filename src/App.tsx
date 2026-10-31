@@ -30,6 +30,7 @@ import { LeaderboardView } from './components/LeaderboardView';
 import { WordVault } from './components/WordVault';
 import { WordDetailModal } from './components/WordDetailModal';
 import { BadgesModal } from './components/BadgesModal';
+import { StudentProfileModal } from './components/StudentProfileModal';
 import confetti from 'canvas-confetti';
 
 export default function App() {
@@ -41,6 +42,7 @@ export default function App() {
   // Modals & inspect
   const [inspectWord, setInspectWord] = useState<VocabularyWord | null>(null);
   const [isBadgesOpen, setIsBadgesOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState<boolean>(() => !stats.studentName);
   const [isOnline, setIsOnline] = useState<boolean>(
     typeof navigator !== 'undefined' ? navigator.onLine : true
   );
@@ -68,6 +70,17 @@ export default function App() {
     setStats(newStats);
     saveUserStats(newStats);
   }, []);
+
+  const handleSaveProfile = useCallback((studentName: string, studentClass: string, studentAvatar: string) => {
+    const updatedStats: UserStats = {
+      ...stats,
+      studentName,
+      studentClass,
+      studentAvatar
+    };
+    setStats(updatedStats);
+    saveUserStats(updatedStats);
+  }, [stats]);
 
   const handleUpdateProgress = useCallback((newProgress: Record<string, WordProgress>) => {
     setWordProgress(newProgress);
@@ -110,6 +123,7 @@ export default function App() {
         onStatsChange={handleUpdateStats}
         isOnline={isOnline}
         onOpenBadges={() => setIsBadgesOpen(true)}
+        onOpenProfile={() => setIsProfileOpen(true)}
         dueCount={dueCount}
       />
 
@@ -208,6 +222,14 @@ export default function App() {
         wordProgress={wordProgress}
         isOpen={isBadgesOpen}
         onClose={() => setIsBadgesOpen(false)}
+      />
+
+      {/* Student Name & Class Modal */}
+      <StudentProfileModal
+        stats={stats}
+        isOpen={isProfileOpen}
+        onClose={() => setIsProfileOpen(false)}
+        onSaveProfile={handleSaveProfile}
       />
 
       {/* Footer */}

@@ -82,11 +82,11 @@ export const InsightsDashboard: React.FC<InsightsDashboardProps> = ({
           <div className="flex items-center gap-2">
             <Brain className="w-6 h-6 text-indigo-400" />
             <h2 className="text-xl sm:text-2xl font-black text-white font-['Outfit']">
-              Personalized Progress & Memory Curve
+              {stats.studentName ? `${stats.studentName}’s Progress Report` : 'Personalized Progress & Memory Curve'}
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-300">
-            Neuroscience-backed spaced repetition diagnostics for your {VOCABULARY_WORDS.length} target vocabulary words
+            {stats.studentClass ? `Class ${stats.studentClass} · ` : ''}Neuroscience-backed spaced repetition diagnostics for your {VOCABULARY_WORDS.length} target vocabulary words
           </p>
         </div>
 

@@ -42,6 +42,9 @@ export interface UserStats {
   streakFreezeAvailable: number;
   soundEnabled: boolean;
   unlockedBadgeIds: string[];
+  studentName?: string;
+  studentClass?: string;
+  studentAvatar?: string;
 }
 
 export interface Badge {
@@ -63,6 +66,7 @@ export interface LeaderboardUser {
   streak: number;
   wordsMastered: number;
   badge: string;
+  studentClass?: string;
   isCurrentUser?: boolean;
 }
 

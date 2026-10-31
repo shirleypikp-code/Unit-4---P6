@@ -30,16 +30,18 @@ export const LeaderboardView: React.FC<LeaderboardViewProps> = ({
   const [activeLeague, setActiveLeague] = useState<'all' | 'weekly'>('all');
 
   // Insert current user with real dynamic stats and sort
+  const displayStudentName = stats.studentName ? stats.studentName : 'You (Champion)';
   const allUsers: LeaderboardUser[] = [
     ...leaderboard.filter(u => !u.isCurrentUser),
     {
       id: 'current_user',
-      name: 'You (Champion)',
-      avatar: '🚀',
+      name: displayStudentName,
+      avatar: stats.studentAvatar || '🚀',
       xp: stats.xp,
       streak: stats.currentStreak,
       wordsMastered: stats.totalWordsLearned,
       badge: stats.xp > 2000 ? 'Diamond Master' : stats.xp > 1000 ? 'Gold Scholar' : 'Silver Ace',
+      studentClass: stats.studentClass || '',
       isCurrentUser: true,
     }
   ].sort((a, b) => b.xp - a.xp);
@@ -97,7 +99,9 @@ export const LeaderboardView: React.FC<LeaderboardViewProps> = ({
               <h4 className="font-bold text-white text-xs sm:text-sm truncate">
                 {top3[1].name}
               </h4>
-              <span className="text-[10px] text-slate-400 block">{top3[1].badge}</span>
+              <span className="text-[10px] text-slate-400 block truncate">
+                {top3[1].studentClass ? `${top3[1].studentClass} · ` : ''}{top3[1].badge}
+              </span>
             </div>
             <div className="text-xs sm:text-sm font-black text-amber-300 font-mono">
               {top3[1].xp} XP
@@ -117,7 +121,9 @@ export const LeaderboardView: React.FC<LeaderboardViewProps> = ({
               <h4 className="font-extrabold text-white text-sm sm:text-base truncate font-['Outfit']">
                 {top3[0].name}
               </h4>
-              <span className="text-xs text-amber-300 font-semibold block">{top3[0].badge}</span>
+              <span className="text-xs text-amber-300 font-semibold block truncate">
+                {top3[0].studentClass ? `${top3[0].studentClass} · ` : ''}{top3[0].badge}
+              </span>
             </div>
             <div className="text-sm sm:text-base font-black text-amber-300 font-mono">
               {top3[0].xp} XP
@@ -136,7 +142,9 @@ export const LeaderboardView: React.FC<LeaderboardViewProps> = ({
               <h4 className="font-bold text-white text-xs sm:text-sm truncate">
                 {top3[2].name}
               </h4>
-              <span className="text-[10px] text-slate-400 block">{top3[2].badge}</span>
+              <span className="text-[10px] text-slate-400 block truncate">
+                {top3[2].studentClass ? `${top3[2].studentClass} · ` : ''}{top3[2].badge}
+              </span>
             </div>
             <div className="text-xs sm:text-sm font-black text-amber-300 font-mono">
               {top3[2].xp} XP
@@ -190,7 +198,7 @@ export const LeaderboardView: React.FC<LeaderboardViewProps> = ({
                       )}
                     </div>
                     <span className="text-xs text-slate-400 truncate block">
-                      {user.badge}
+                      {user.studentClass ? `Class ${user.studentClass} · ` : ''}{user.badge}
                     </span>
                   </div>
                 </div>

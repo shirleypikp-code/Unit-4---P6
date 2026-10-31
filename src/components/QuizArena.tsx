@@ -321,8 +321,13 @@ export const QuizArena: React.FC<QuizArenaProps> = ({
 
           <div className="space-y-1">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-['Outfit']">
-              Quiz Completed!
+              Quiz Completed{stats.studentName ? `, ${stats.studentName}!` : '!'}
             </h3>
+            {stats.studentName && (
+              <p className="text-xs font-semibold text-amber-300">
+                {stats.studentAvatar || '🚀'} {stats.studentName}{stats.studentClass ? ` · Class ${stats.studentClass}` : ''}
+              </p>
+            )}
             <p className="text-slate-300 text-sm">
               Great workout! Your memory retention data has been synced to your Spaced Repetition deck.
             </p>

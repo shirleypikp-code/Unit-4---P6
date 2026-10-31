@@ -17,7 +17,8 @@ import {
   BarChart3,
   Trophy,
   BrainCircuit,
-  Puzzle
+  Puzzle,
+  UserCircle2
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -27,6 +28,7 @@ interface HeaderProps {
   onStatsChange: (stats: UserStats) => void;
   isOnline: boolean;
   onOpenBadges: () => void;
+  onOpenProfile: () => void;
   dueCount: number;
 }
 
@@ -37,6 +39,7 @@ export const Header: React.FC<HeaderProps> = ({
   onStatsChange,
   isOnline,
   onOpenBadges,
+  onOpenProfile,
   dueCount
 }) => {
   const { level, progress, nextLevelXp } = calculateLevel(stats.xp);
@@ -87,7 +90,37 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Center/Right Stats Indicators */}
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Student Name & Class Button */}
+          <button
+            type="button"
+            onClick={() => { soundManager.playClick(); onOpenProfile(); }}
+            title="Edit Student Name & Class"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 hover:border-indigo-500/60 text-xs transition-colors max-w-[180px] sm:max-w-[230px]"
+          >
+            {stats.studentName ? (
+              <>
+                <span className="text-sm shrink-0">{stats.studentAvatar || '🚀'}</span>
+                <span className="truncate font-semibold text-white">
+                  {stats.studentName}
+                </span>
+                {stats.studentClass && (
+                  <>
+                    <span className="text-slate-500 shrink-0">·</span>
+                    <span className="text-amber-300 font-medium shrink-0 truncate max-w-[70px]">
+                      {stats.studentClass}
+                    </span>
+                  </>
+                )}
+              </>
+            ) : (
+              <>
+                <UserCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
+                <span className="font-semibold text-amber-200 truncate">Set Name & Class</span>
+              </>
+            )}
+          </button>
+
           {/* Offline/Online Indicator */}
           <div 
             title={isOnline ? "Online: Battle sync and sharing active" : "Offline Mode: Everything saved safely to device"}
