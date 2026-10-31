@@ -42,10 +42,12 @@ export const ContextMatch: React.FC<ContextMatchProps> = ({
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [completedCount, setCompletedCount] = useState(0);
+  const [unitFilter, setUnitFilter] = useState<'all' | 1 | 2>('all');
 
   // Generate narrative fill-in puzzles
   useEffect(() => {
-    const storyList: StoryPuzzle[] = VOCABULARY_WORDS.map((w, idx) => {
+    const pool = unitFilter === 'all' ? VOCABULARY_WORDS : VOCABULARY_WORDS.filter(w => w.unit === unitFilter);
+    const storyList: StoryPuzzle[] = pool.map((w, idx) => {
       // Create context snippet
       const sentence = w.exampleSentence;
       const regex = new RegExp(`\\b${w.word}\\b`, 'i');
@@ -72,7 +74,11 @@ export const ContextMatch: React.FC<ContextMatchProps> = ({
     }).sort(() => 0.5 - Math.random());
 
     setPuzzles(storyList);
-  }, []);
+    setCurrentIndex(0);
+    setSelectedWord(null);
+    setIsAnswered(false);
+    setIsCorrect(false);
+  }, [unitFilter]);
 
   const currentPuzzle = puzzles[currentIndex];
 
@@ -129,7 +135,7 @@ export const ContextMatch: React.FC<ContextMatchProps> = ({
   return (
     <div className="max-w-3xl mx-auto px-4 py-6 space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between bg-slate-900/90 p-4 rounded-2xl border border-indigo-900/40">
+      <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-900/90 p-4 rounded-2xl border border-indigo-900/40">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-500 to-indigo-600 flex items-center justify-center text-white">
             <BookOpen className="w-4 h-4" />
@@ -140,9 +146,32 @@ export const ContextMatch: React.FC<ContextMatchProps> = ({
           </div>
         </div>
 
-        <div className="flex items-center gap-2 text-xs text-indigo-300 font-semibold bg-indigo-950/60 border border-indigo-800 px-3 py-1 rounded-xl">
-          <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-          <span>Solved: {completedCount}</span>
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs">
+            <button
+              onClick={() => setUnitFilter('all')}
+              className={`px-2.5 py-1 rounded-lg font-medium ${unitFilter === 'all' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+            >
+              All {VOCABULARY_WORDS.length}
+            </button>
+            <button
+              onClick={() => setUnitFilter(2)}
+              className={`px-2.5 py-1 rounded-lg font-medium ${unitFilter === 2 ? 'bg-indigo-600 text-white' : 'text-amber-300 hover:text-amber-200'}`}
+            >
+              Set 2 (New)
+            </button>
+            <button
+              onClick={() => setUnitFilter(1)}
+              className={`px-2.5 py-1 rounded-lg font-medium ${unitFilter === 1 ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+            >
+              Set 1
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2 text-xs text-indigo-300 font-semibold bg-indigo-950/60 border border-indigo-800 px-3 py-1 rounded-xl">
+            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+            <span>Solved: {completedCount}</span>
+          </div>
         </div>
       </div>
 

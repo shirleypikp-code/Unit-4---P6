@@ -44,12 +44,15 @@ export const WordScramble: React.FC<WordScrambleProps> = ({
   const [hintLevel, setHintLevel] = useState(0); // 0: None, 1: Definition, 2: First Letter
   const [streak, setStreak] = useState(0);
   const [totalSolved, setTotalSolved] = useState(0);
+  const [unitFilter, setUnitFilter] = useState<'all' | 1 | 2>('all');
 
   // Initialize randomized list of words
   useEffect(() => {
-    const shuffled = [...VOCABULARY_WORDS].sort(() => 0.5 - Math.random());
+    const pool = unitFilter === 'all' ? VOCABULARY_WORDS : VOCABULARY_WORDS.filter(w => w.unit === unitFilter);
+    const shuffled = [...pool].sort(() => 0.5 - Math.random());
     setWordList(shuffled);
-  }, []);
+    setCurrentIndex(0);
+  }, [unitFilter]);
 
   const currentWord = wordList[currentIndex] || VOCABULARY_WORDS[0];
 
@@ -146,7 +149,8 @@ export const WordScramble: React.FC<WordScrambleProps> = ({
       setCurrentIndex(prev => prev + 1);
     } else {
       // Reshuffle and start over
-      const shuffled = [...VOCABULARY_WORDS].sort(() => 0.5 - Math.random());
+      const pool = unitFilter === 'all' ? VOCABULARY_WORDS : VOCABULARY_WORDS.filter(w => w.unit === unitFilter);
+      const shuffled = [...pool].sort(() => 0.5 - Math.random());
       setWordList(shuffled);
       setCurrentIndex(0);
     }
@@ -162,18 +166,39 @@ export const WordScramble: React.FC<WordScrambleProps> = ({
   return (
     <div className="max-w-3xl mx-auto px-4 py-6 space-y-6">
       {/* Top Banner */}
-      <div className="flex items-center justify-between bg-slate-900/90 p-4 rounded-2xl border border-indigo-900/40">
+      <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-900/90 p-4 rounded-2xl border border-indigo-900/40">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-400 to-rose-500 flex items-center justify-center text-white">
             <Puzzle className="w-4 h-4" />
           </div>
           <div>
             <h2 className="text-sm sm:text-base font-bold text-white">Spell Scramble Quest</h2>
-            <p className="text-[11px] text-slate-400">Reconstruct the 20 target vocabulary words</p>
+            <p className="text-[11px] text-slate-400">Reconstruct the {VOCABULARY_WORDS.length} target vocabulary words</p>
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs">
+            <button
+              onClick={() => setUnitFilter('all')}
+              className={`px-2.5 py-1 rounded-lg font-medium ${unitFilter === 'all' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+            >
+              All {VOCABULARY_WORDS.length}
+            </button>
+            <button
+              onClick={() => setUnitFilter(2)}
+              className={`px-2.5 py-1 rounded-lg font-medium ${unitFilter === 2 ? 'bg-indigo-600 text-white' : 'text-amber-300 hover:text-amber-200'}`}
+            >
+              Set 2 (New)
+            </button>
+            <button
+              onClick={() => setUnitFilter(1)}
+              className={`px-2.5 py-1 rounded-lg font-medium ${unitFilter === 1 ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+            >
+              Set 1
+            </button>
+          </div>
+
           <div className="flex items-center gap-1 bg-orange-950/60 border border-orange-800 text-orange-300 px-2.5 py-1 rounded-xl text-xs font-bold">
             <Flame className="w-3.5 h-3.5 fill-orange-400 text-orange-400" />
             <span>Streak: {streak}</span>

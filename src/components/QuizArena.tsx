@@ -58,14 +58,16 @@ export const QuizArena: React.FC<QuizArenaProps> = ({
   const [isQuizFinished, setIsQuizFinished] = useState(false);
   const [wrongWordIds, setWrongWordIds] = useState<string[]>([]);
   const [questionCount, setQuestionCount] = useState<number>(10);
+  const [unitFilter, setUnitFilter] = useState<'all' | 1 | 2>('all');
   const [showHint, setShowHint] = useState(false);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Generate dynamic quiz questions
-  const generateQuestions = (count: number = 10) => {
+  const generateQuestions = (count: number = 10, pack: 'all' | 1 | 2 = unitFilter) => {
+    const pool = pack === 'all' ? VOCABULARY_WORDS : VOCABULARY_WORDS.filter(w => w.unit === pack);
     // Shuffle words
-    const shuffled = [...VOCABULARY_WORDS].sort(() => 0.5 - Math.random());
+    const shuffled = [...pool].sort(() => 0.5 - Math.random());
     const selected = shuffled.slice(0, Math.min(count, shuffled.length));
 
     const newQuestions: QuizQuestion[] = selected.map((word, idx) => {
@@ -119,8 +121,8 @@ export const QuizArena: React.FC<QuizArenaProps> = ({
   };
 
   useEffect(() => {
-    generateQuestions(questionCount);
-  }, [questionCount]);
+    generateQuestions(questionCount, unitFilter);
+  }, [questionCount, unitFilter]);
 
   // Timer effect
   useEffect(() => {
@@ -254,27 +256,58 @@ export const QuizArena: React.FC<QuizArenaProps> = ({
           </div>
         </div>
 
-        {/* Question length switcher */}
+        {/* Pack & Question length switcher */}
         {!isQuizFinished && (
-          <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs">
-            <button
-              onClick={() => setQuestionCount(5)}
-              className={`px-2.5 py-1 rounded-lg font-medium ${questionCount === 5 ? 'bg-indigo-600 text-white' : 'text-slate-400'}`}
-            >
-              5 Qs
-            </button>
-            <button
-              onClick={() => setQuestionCount(10)}
-              className={`px-2.5 py-1 rounded-lg font-medium ${questionCount === 10 ? 'bg-indigo-600 text-white' : 'text-slate-400'}`}
-            >
-              10 Qs
-            </button>
-            <button
-              onClick={() => setQuestionCount(20)}
-              className={`px-2.5 py-1 rounded-lg font-medium ${questionCount === 20 ? 'bg-indigo-600 text-white' : 'text-slate-400'}`}
-            >
-              All 20
-            </button>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs">
+              <button
+                onClick={() => setUnitFilter('all')}
+                className={`px-2.5 py-1 rounded-lg font-medium ${unitFilter === 'all' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+              >
+                All Packs
+              </button>
+              <button
+                onClick={() => setUnitFilter(2)}
+                className={`px-2.5 py-1 rounded-lg font-medium ${unitFilter === 2 ? 'bg-indigo-600 text-white' : 'text-amber-300 hover:text-amber-200'}`}
+              >
+                Set 2 (New)
+              </button>
+              <button
+                onClick={() => setUnitFilter(1)}
+                className={`px-2.5 py-1 rounded-lg font-medium ${unitFilter === 1 ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+              >
+                Set 1
+              </button>
+            </div>
+
+            <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs">
+              <button
+                onClick={() => setQuestionCount(5)}
+                className={`px-2.5 py-1 rounded-lg font-medium ${questionCount === 5 ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+              >
+                5 Qs
+              </button>
+              <button
+                onClick={() => setQuestionCount(10)}
+                className={`px-2.5 py-1 rounded-lg font-medium ${questionCount === 10 ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+              >
+                10 Qs
+              </button>
+              <button
+                onClick={() => setQuestionCount(20)}
+                className={`px-2.5 py-1 rounded-lg font-medium ${questionCount === 20 ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+              >
+                20 Qs
+              </button>
+              {unitFilter === 'all' && (
+                <button
+                  onClick={() => setQuestionCount(VOCABULARY_WORDS.length)}
+                  className={`px-2.5 py-1 rounded-lg font-medium ${questionCount === VOCABULARY_WORDS.length ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+                >
+                  All {VOCABULARY_WORDS.length}
+                </button>
+              )}
+            </div>
           </div>
         )}
       </div>
@@ -344,7 +377,7 @@ export const QuizArena: React.FC<QuizArenaProps> = ({
           {/* Action CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-3 pt-3">
             <button
-              onClick={() => generateQuestions(questionCount)}
+              onClick={() => generateQuestions(questionCount, unitFilter)}
               className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 transition hover:scale-105"
             >
               <RotateCcw className="w-4 h-4" /> Play Another Round

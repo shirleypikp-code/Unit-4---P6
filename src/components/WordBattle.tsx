@@ -211,7 +211,7 @@ export const WordBattle: React.FC<WordBattleProps> = ({
   // Social Share Action
   const handleShareChallenge = async () => {
     soundManager.playClick();
-    const shareText = `⚔️ I scored ${challengeScore} pts in a LexiQuest Vocabulary Battle! Can you beat me on the 20 target words? Challenge Code: ${customChallengeCode}`;
+    const shareText = `⚔️ I scored ${challengeScore} pts in a LexiQuest Vocabulary Battle! Can you beat me on all ${VOCABULARY_WORDS.length} target words? Challenge Code: ${customChallengeCode}`;
     const shareUrl = window.location.href;
 
     if (navigator.share) {

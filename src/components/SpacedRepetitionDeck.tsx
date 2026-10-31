@@ -35,7 +35,7 @@ export const SpacedRepetitionDeck: React.FC<SpacedRepetitionDeckProps> = ({
   onUpdateStats,
   onSelectWordDetail
 }) => {
-  const [filterMode, setFilterMode] = useState<'due' | 'all' | 'box1' | 'mastered'>('due');
+  const [filterMode, setFilterMode] = useState<'due' | 'all' | 'unit1' | 'unit2' | 'box1' | 'mastered'>('due');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [sessionCompleted, setSessionCompleted] = useState(false);
@@ -49,6 +49,12 @@ export const SpacedRepetitionDeck: React.FC<SpacedRepetitionDeckProps> = ({
         return !prog || isDueForReview(prog);
       });
       return due.length > 0 ? due : VOCABULARY_WORDS;
+    }
+    if (filterMode === 'unit1') {
+      return VOCABULARY_WORDS.filter(w => w.unit === 1);
+    }
+    if (filterMode === 'unit2') {
+      return VOCABULARY_WORDS.filter(w => w.unit === 2);
     }
     if (filterMode === 'box1') {
       return VOCABULARY_WORDS.filter(w => (wordProgress[w.id]?.box || 1) <= 2);
@@ -174,7 +180,7 @@ export const SpacedRepetitionDeck: React.FC<SpacedRepetitionDeckProps> = ({
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex items-center gap-1.5 bg-slate-950/70 p-1 rounded-xl border border-slate-800 text-xs">
+        <div className="flex flex-wrap items-center gap-1.5 bg-slate-950/70 p-1 rounded-xl border border-slate-800 text-xs">
           <button
             onClick={() => { setFilterMode('due'); setCurrentIndex(0); setIsFlipped(false); }}
             className={`px-3 py-1 rounded-lg font-medium transition ${
@@ -184,12 +190,28 @@ export const SpacedRepetitionDeck: React.FC<SpacedRepetitionDeckProps> = ({
             Due for Review
           </button>
           <button
+            onClick={() => { setFilterMode('unit2'); setCurrentIndex(0); setIsFlipped(false); }}
+            className={`px-3 py-1 rounded-lg font-medium transition ${
+              filterMode === 'unit2' ? 'bg-indigo-600 text-white font-bold' : 'text-amber-300 hover:text-amber-200'
+            }`}
+          >
+            New Pack (Set 2)
+          </button>
+          <button
+            onClick={() => { setFilterMode('unit1'); setCurrentIndex(0); setIsFlipped(false); }}
+            className={`px-3 py-1 rounded-lg font-medium transition ${
+              filterMode === 'unit1' ? 'bg-indigo-600 text-white font-bold' : 'text-slate-400 hover:text-white'
+            }`}
+          >
+            Set 1
+          </button>
+          <button
             onClick={() => { setFilterMode('all'); setCurrentIndex(0); setIsFlipped(false); }}
             className={`px-3 py-1 rounded-lg font-medium transition ${
               filterMode === 'all' ? 'bg-indigo-600 text-white font-bold' : 'text-slate-400 hover:text-white'
             }`}
           >
-            All 20 Words
+            All {VOCABULARY_WORDS.length} Words
           </button>
           <button
             onClick={() => { setFilterMode('box1'); setCurrentIndex(0); setIsFlipped(false); }}
@@ -197,7 +219,7 @@ export const SpacedRepetitionDeck: React.FC<SpacedRepetitionDeckProps> = ({
               filterMode === 'box1' ? 'bg-indigo-600 text-white font-bold' : 'text-slate-400 hover:text-white'
             }`}
           >
-            Need Practice (Box 1-2)
+            Box 1-2
           </button>
           <button
             onClick={() => { setFilterMode('mastered'); setCurrentIndex(0); setIsFlipped(false); }}
@@ -205,7 +227,7 @@ export const SpacedRepetitionDeck: React.FC<SpacedRepetitionDeckProps> = ({
               filterMode === 'mastered' ? 'bg-indigo-600 text-white font-bold' : 'text-slate-400 hover:text-white'
             }`}
           >
-            Mastered (Box 4-5)
+            Mastered
           </button>
         </div>
       </div>
@@ -257,7 +279,7 @@ export const SpacedRepetitionDeck: React.FC<SpacedRepetitionDeckProps> = ({
               }}
               className="px-6 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-slate-700 transition"
             >
-              Browse All 20 Words
+              Browse All {VOCABULARY_WORDS.length} Words
             </button>
           </div>
         </div>
@@ -270,7 +292,7 @@ export const SpacedRepetitionDeck: React.FC<SpacedRepetitionDeckProps> = ({
             onClick={() => setFilterMode('all')}
             className="px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-500 transition"
           >
-            Show All 20 Words
+            Show All {VOCABULARY_WORDS.length} Words
           </button>
         </div>
       ) : (

@@ -12,6 +12,7 @@ export interface VocabularyWord {
   antonyms: string[];
   funFactOrContext: string;
   category: 'Character & People' | 'Actions & States' | 'Nature & World' | 'Language & Thought';
+  unit?: 1 | 2;
 }
 
 export interface WordProgress {

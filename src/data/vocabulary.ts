@@ -14,7 +14,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['shaky', 'quivering', 'timid', 'wavering', 'hesitant'],
     antonyms: ['steady', 'confident', 'firm', 'unwavering'],
     funFactOrContext: 'Comes from the Latin "tremere", which means to quake or tremble.',
-    category: 'Actions & States'
+    category: 'Actions & States',
+    unit: 1
   },
   {
     id: 'occupants',
@@ -29,7 +30,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['residents', 'inhabitants', 'passengers', 'dwellers', 'tenants'],
     antonyms: ['visitors', 'intruders', 'evictees'],
     funFactOrContext: 'In law and safety regulations, "occupants" is the official term for everyone inside a building or vehicle.',
-    category: 'Character & People'
+    category: 'Character & People',
+    unit: 1
   },
   {
     id: 'gobetween',
@@ -44,7 +46,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['intermediary', 'mediator', 'messenger', 'liaison', 'broker'],
     antonyms: ['principals', 'instigator', 'bystander'],
     funFactOrContext: 'Also spelled "go-between", this term was famously used in L.P. Hartley’s classic novel "The Go-Between".',
-    category: 'Character & People'
+    category: 'Character & People',
+    unit: 1
   },
   {
     id: 'tucked-in',
@@ -59,7 +62,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['snuggled', 'cocooned', 'bundled up', 'tucked away'],
     antonyms: ['uncovered', 'untucked', 'exposed'],
     funFactOrContext: 'In British English, "tuck in!" is a cheerful invitation to start eating a delicious feast.',
-    category: 'Actions & States'
+    category: 'Actions & States',
+    unit: 1
   },
   {
     id: 'recollection',
@@ -74,7 +78,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['memory', 'remembrance', 'reminiscence', 'recall'],
     antonyms: ['forgetfulness', 'amnesia', 'oblivion'],
     funFactOrContext: 'Scientists have shown that every time you have a recollection, your brain rebuilds the memory anew!',
-    category: 'Language & Thought'
+    category: 'Language & Thought',
+    unit: 1
   },
   {
     id: 'daffodils',
@@ -89,7 +94,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['narcissi', 'jonquils', 'yellow blooms'],
     antonyms: ['weeds', 'thorns'],
     funFactOrContext: 'Poet William Wordsworth wrote one of England\'s most famous poems titled "I Wandered Lonely as a Cloud" celebrating dancing daffodils!',
-    category: 'Nature & World'
+    category: 'Nature & World',
+    unit: 1
   },
   {
     id: 'homophones',
@@ -104,7 +110,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['homonyms', 'sound-alikes'],
     antonyms: ['heteronyms', 'antonyms'],
     funFactOrContext: 'English has more than 8,000 homophones because words were borrowed from French, Latin, Norse, and Old English!',
-    category: 'Language & Thought'
+    category: 'Language & Thought',
+    unit: 1
   },
   {
     id: 'parenthesis',
@@ -119,7 +126,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['aside', 'brackets', 'interjection', 'digression'],
     antonyms: ['mainstream', 'core text'],
     funFactOrContext: 'In mathematics and coding, parentheses tell the computer which operation must be calculated first!',
-    category: 'Language & Thought'
+    category: 'Language & Thought',
+    unit: 1
   },
   {
     id: 'accomplice',
@@ -134,7 +142,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['partner in crime', 'collaborator', 'accessory', 'cohort', 'abettor'],
     antonyms: ['opponent', 'adversary', 'whistleblower', 'victim'],
     funFactOrContext: 'Even if the accomplice stays outside as a lookout, law courts treat them as having shared responsibility!',
-    category: 'Character & People'
+    category: 'Character & People',
+    unit: 1
   },
   {
     id: 'alerted',
@@ -149,7 +158,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['warned', 'notified', 'cautioned', 'tipped off', 'signaled'],
     antonyms: ['misled', 'lulled', 'distracted', 'concealed'],
     funFactOrContext: 'The word alert came from the military Italian phrase "all\'erta!", meaning "on the watchtower lookout"!',
-    category: 'Actions & States'
+    category: 'Actions & States',
+    unit: 1
   },
   {
     id: 'narration',
@@ -164,7 +174,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['storytelling', 'recital', 'account', 'chronicle', 'voiceover'],
     antonyms: ['silence', 'dialogue-only', 'pantomime'],
     funFactOrContext: 'Ancient myths and epics like the Odyssey were preserved for centuries through oral narration before being written down.',
-    category: 'Language & Thought'
+    category: 'Language & Thought',
+    unit: 1
   },
   {
     id: 'startled',
@@ -179,7 +190,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['shocked', 'surprised', 'alarmed', 'frightened', 'taken aback'],
     antonyms: ['calm', 'unfazed', 'prepared', 'composed'],
     funFactOrContext: 'The startle reflex is one of the fastest neural defense mechanisms in both humans and animals, taking just 14 milliseconds!',
-    category: 'Actions & States'
+    category: 'Actions & States',
+    unit: 1
   },
   {
     id: 'enthusiastic',
@@ -194,7 +206,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['eager', 'passionate', 'excited', 'zealous', 'spirited', 'keen'],
     antonyms: ['apathetic', 'indifferent', 'bored', 'lethargic', 'reluctant'],
     funFactOrContext: 'Originally from Greek "entheos", meaning "inspired by divine energy within"!',
-    category: 'Actions & States'
+    category: 'Actions & States',
+    unit: 1
   },
   {
     id: 'officious',
@@ -209,7 +222,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['meddlesome', 'bossy', 'overbearing', 'dictatorial', 'intrusive', 'fussy'],
     antonyms: ['unobtrusive', 'easygoing', 'laid-back', 'hands-off', 'modest'],
     funFactOrContext: 'Don\'t confuse officious (annoyingly bossy) with official (authorized and legitimate)!',
-    category: 'Character & People'
+    category: 'Character & People',
+    unit: 1
   },
   {
     id: 'soiled',
@@ -224,7 +238,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['dirty', 'stained', 'begrimed', 'muddy', 'tarnished', 'grimy'],
     antonyms: ['clean', 'spotless', 'pristine', 'immaculate'],
     funFactOrContext: 'While soil as a noun gives life to plants, soiled as an adjective usually means something needs a good wash!',
-    category: 'Nature & World'
+    category: 'Nature & World',
+    unit: 1
   },
   {
     id: 'decisively',
@@ -239,7 +254,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['firmly', 'resolutely', 'conclusively', 'boldly', 'definitively'],
     antonyms: ['hesitantly', 'indecisively', 'waveringly', 'doubtfully'],
     funFactOrContext: 'Great chess grandmasters win matches by playing decisive moves that shut down all rival options.',
-    category: 'Actions & States'
+    category: 'Actions & States',
+    unit: 1
   },
   {
     id: 'manners daze',
@@ -254,7 +270,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['etiquette confusion', 'politeness overload', 'formality stupor', 'social bewilderment'],
     antonyms: ['social composure', 'relaxed ease', 'casual confidence'],
     funFactOrContext: 'Historically, debutantes at Victorian balls often experienced this sensation trying to remember hundreds of curtsy protocols!',
-    category: 'Language & Thought'
+    category: 'Language & Thought',
+    unit: 1
   },
   {
     id: 'decades',
@@ -269,7 +286,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['ten-year periods', 'eras', 'epochs', 'generations'],
     antonyms: ['moments', 'seconds', 'instants'],
     funFactOrContext: 'The word comes from Greek "dekas", a company of ten. Decades often get iconic nicknames like "the Roaring Twenties" or "the Eighties"!',
-    category: 'Nature & World'
+    category: 'Nature & World',
+    unit: 1
   },
   {
     id: 'butler',
@@ -284,7 +302,8 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['manservant', 'steward', 'major-domo', 'house manager', 'valet'],
     antonyms: ['master', 'guest', 'visitor'],
     funFactOrContext: 'The title butler comes from Old French "bouteillier", meaning the cup-bearer in charge of bottles and wine cellars!',
-    category: 'Character & People'
+    category: 'Character & People',
+    unit: 1
   },
   {
     id: 'viewpoint',
@@ -299,7 +318,330 @@ export const VOCABULARY_WORDS: VocabularyWord[] = [
     synonyms: ['perspective', 'angle', 'outlook', 'point of view', 'vantage point', 'stance'],
     antonyms: ['blind spot', 'narrow-mindedness'],
     funFactOrContext: 'In cinema and literature, changing the viewpoint of the camera or narrator can turn an ordinary scene into a suspenseful thriller!',
-    category: 'Language & Thought'
+    category: 'Language & Thought',
+    unit: 1
+  },
+
+  // --- SET 2: 20 NEW VOCABULARY WORDS ---
+  {
+    id: 'channel',
+    word: 'channel',
+    partOfSpeech: 'noun / verb',
+    pronunciation: '/ˈtʃænəl/',
+    definition: 'A waterway, passage, or medium for communication; or to direct energy, emotion, or resources toward a particular goal.',
+    childFriendlyDefinition: 'A path where water or TV signals travel, or focusing your feelings and energy into something positive.',
+    exampleSentence: 'The young inventor learned to channel her boundless curiosity into building solar-powered robots.',
+    secondarySentence: 'Ships sailed carefully through the deep navigation channel between the two islands.',
+    mnemonic: 'A TV channel guides shows to your screen just like a river channel guides water!',
+    synonyms: ['conduit', 'medium', 'waterway', 'direct', 'guide', 'funnel'],
+    antonyms: ['scatter', 'blockage', 'disperse'],
+    funFactOrContext: 'Shares the exact same Latin root "canalis" as the word "canal"!',
+    category: 'Nature & World',
+    unit: 2
+  },
+  {
+    id: 'acute',
+    word: 'acute',
+    partOfSpeech: 'adjective',
+    pronunciation: '/əˈkjuːt/',
+    definition: 'Extremely sharp, severe, or intense; having keen perception or intellect; or measuring less than 90 degrees.',
+    childFriendlyDefinition: 'Super sharp and strong—like a dog’s amazing sense of smell, a sudden sharp ache, or a tiny triangle angle.',
+    exampleSentence: 'Owls possess an acute sense of hearing that lets them pinpoint mice rustling beneath deep snow.',
+    secondarySentence: 'The captain’s acute observation skills helped the crew spot the reef before sunset.',
+    mnemonic: 'A "cute" little angle is sharp and pointy (under 90 degrees)—sharp mind, sharp senses!',
+    synonyms: ['keen', 'sharp', 'perceptive', 'intense', 'astute', 'piercing'],
+    antonyms: ['dull', 'obtuse', 'mild', 'blunt', 'faint'],
+    funFactOrContext: 'Comes from Latin "acutus" (sharpened), related to "acupuncture" (sharp needles)!',
+    category: 'Actions & States',
+    unit: 2
+  },
+  {
+    id: 'utmost',
+    word: 'utmost',
+    partOfSpeech: 'adjective / noun',
+    pronunciation: '/ˈʌtmoʊst/',
+    definition: 'Most extreme; greatest in degree, amount, or importance; the maximum possible effort.',
+    childFriendlyDefinition: 'The absolute biggest, highest, or very best effort you can possibly give.',
+    exampleSentence: 'Archaeologists handled the three-thousand-year-old papyrus scroll with the utmost care.',
+    secondarySentence: 'Our rescue team will do their utmost to bring the stranded climbers home safely.',
+    mnemonic: 'Ut-MOST = the absolute MOST you can ever reach!',
+    synonyms: ['maximum', 'supreme', 'greatest', 'paramount', 'extreme'],
+    antonyms: ['least', 'minimal', 'slightest', 'trivial'],
+    funFactOrContext: 'Evolved from Old English "utemest", literally meaning "outermost" or farthest out!',
+    category: 'Actions & States',
+    unit: 2
+  },
+  {
+    id: 'foothold',
+    word: 'foothold',
+    partOfSpeech: 'noun',
+    pronunciation: '/ˈfʊthoʊld/',
+    definition: 'A secure place where a person’s foot can be supported when climbing; or a secure initial position from which further progress can be made.',
+    childFriendlyDefinition: 'A safe rocky ledge for your boot when climbing up, or a strong starting spot to grow bigger.',
+    exampleSentence: 'The mountain climber searched the icy cliff face until her boot found a solid foothold.',
+    secondarySentence: 'Their small bakery gained a strong foothold in the city thanks to its warm cinnamon bread.',
+    mnemonic: 'Literally a spot that "holds" your "foot" steady so you can climb higher!',
+    synonyms: ['grip', 'purchase', 'bridgehead', 'foundation', 'anchorage'],
+    antonyms: ['slip', 'instability', 'loss'],
+    funFactOrContext: 'Mountaineers carve tiny footholds into sheer ice walls using specialized crampons and ice axes.',
+    category: 'Nature & World',
+    unit: 2
+  },
+  {
+    id: 'void',
+    word: 'void',
+    partOfSpeech: 'noun / adjective',
+    pronunciation: '/vɔɪd/',
+    definition: 'A completely empty space or vast chasm; devoid of content; or legally invalid and cancelled.',
+    childFriendlyDefinition: 'A giant, completely empty space with nothing inside it at all, like deep outer space.',
+    exampleSentence: 'Astronauts gazed silently out the cupola window into the starlit void of deep space.',
+    secondarySentence: 'Without an authorized signature at the bottom, the ticket was declared null and void.',
+    mnemonic: 'Avoid falling into the empty VOID of outer space!',
+    synonyms: ['emptiness', 'vacuum', 'abyss', 'chasm', 'invalid', 'vacant'],
+    antonyms: ['fullness', 'abundance', 'valid', 'occupied'],
+    funFactOrContext: 'Astronomers discovered "cosmic voids"—vast spaces between galaxy filaments that contain almost no stars at all!',
+    category: 'Nature & World',
+    unit: 2
+  },
+  {
+    id: 'context',
+    word: 'context',
+    partOfSpeech: 'noun',
+    pronunciation: '/ˈkɒntɛkst/',
+    definition: 'The circumstances, background, or surrounding words that form the setting for an event, statement, or idea so it can be fully understood.',
+    childFriendlyDefinition: 'The clues and background story around a word or event that help you understand what it really means.',
+    exampleSentence: 'Even if you meet an unfamiliar word, reading the surrounding sentence gives helpful context.',
+    secondarySentence: 'Historians study ancient letters in the context of the era in which they were written.',
+    mnemonic: 'Con (together) + Text (woven words) = all the words woven together around an idea!',
+    synonyms: ['background', 'setting', 'circumstances', 'framework', 'situation'],
+    antonyms: ['isolation', 'misinterpretation'],
+    funFactOrContext: 'Originally from Latin "contexere", meaning "to weave together" like threads on a loom!',
+    category: 'Language & Thought',
+    unit: 2
+  },
+  {
+    id: 'storyboard',
+    word: 'storyboard',
+    partOfSpeech: 'noun',
+    pronunciation: '/ˈstɔːribɔːrd/',
+    definition: 'A sequence of drawings and visual panels, typically with camera directions and dialogue, representing the shots planned for a film or animation.',
+    childFriendlyDefinition: 'A comic-strip style board of sketches that movie and game makers draw to plan every scene before filming.',
+    exampleSentence: 'Before animating a single frame, the studio pinned three hundred sketches onto the storyboard.',
+    secondarySentence: 'Students sketched a colorful storyboard to map out their science documentary video.',
+    mnemonic: 'A "board" that shows the whole "story" panel by panel!',
+    synonyms: ['visual script', 'shot list', 'scene outline', 'animatic plan'],
+    antonyms: ['improvisation', 'unscripted footage'],
+    funFactOrContext: 'The modern storyboard process was pioneered at Walt Disney Studios in the early 1930s by animator Webb Smith!',
+    category: 'Language & Thought',
+    unit: 2
+  },
+  {
+    id: 'suspicious',
+    word: 'suspicious',
+    partOfSpeech: 'adjective',
+    pronunciation: '/səˈspɪʃəs/',
+    definition: 'Having or showing a cautious distrust of someone or something; arousing doubt or questionable belief.',
+    childFriendlyDefinition: 'Feeling like something fishy or sneaky might be going on, or acting in a way that makes people wonder.',
+    exampleSentence: 'The detective grew suspicious when the witness claimed to be gardening during a midnight blizzard.',
+    secondarySentence: 'Crumbs leading straight under the sofa looked mighty suspicious to the dog’s owner.',
+    mnemonic: 'Suspect + Fishy = Suspicious! Raising one eyebrow like a detective!',
+    synonyms: ['doubtful', 'skeptical', 'wary', 'questionable', 'fishy', 'mistrustful'],
+    antonyms: ['trusting', 'unsuspecting', 'innocent', 'aboveboard', 'credible'],
+    funFactOrContext: 'Comes from Latin "suspicere", meaning "to look up at sideways or secretly watch"!',
+    category: 'Character & People',
+    unit: 2
+  },
+  {
+    id: 'sympathise',
+    word: 'sympathise',
+    partOfSpeech: 'verb',
+    pronunciation: '/ˈsɪmpəθaɪz/',
+    definition: 'To feel or express compassion, pity, or understanding for someone else’s hardship or emotional distress.',
+    childFriendlyDefinition: 'Caring about someone’s feelings and showing kindness when they are having a tough time.',
+    exampleSentence: 'Having lost a championship match last season, Maya could deeply sympathise with the runner-up team.',
+    secondarySentence: 'Friends gathered around Leo to sympathise when his bicycle tire went flat in the rain.',
+    mnemonic: 'Sym (together) + Pathos (feeling) = feeling kindness together with a friend!',
+    synonyms: ['commiserate', 'compassionate', 'empathize', 'console', 'understand'],
+    antonyms: ['disregard', 'ignore', 'mock', 'dismiss'],
+    funFactOrContext: 'Spelled "sympathise" in British/International English and "sympathize" in American English!',
+    category: 'Character & People',
+    unit: 2
+  },
+  {
+    id: 'dashes',
+    word: 'dashes',
+    partOfSpeech: 'noun (plural) / verb',
+    pronunciation: '/ˈdæʃɪz/',
+    definition: 'Horizontal punctuation marks (— or –) used to set off dramatic pauses or thoughts; or sudden rapid sprints; or tiny pinches of ingredients.',
+    childFriendlyDefinition: 'Long horizontal lines (—) in writing that add an exciting pause, or quick speedy sprints across a field!',
+    exampleSentence: 'The writer used em dashes—just like these—to spotlight the surprising twist in the sentence.',
+    secondarySentence: 'When the bell rang, she made quick dashes across the courtyard to catch the library cart.',
+    mnemonic: 'A dash (—) looks like a flat sprint track where words race across!',
+    synonyms: ['sprints', 'rushes', 'hyphens', 'pinches', 'splashes', 'bolts'],
+    antonyms: ['strolls', 'crawls', 'omissions'],
+    funFactOrContext: 'Printers distinguish between the "en dash" (–, width of N) for ranges and the "em dash" (—, width of M) for dramatic interruptions!',
+    category: 'Language & Thought',
+    unit: 2
+  },
+  {
+    id: 'frequency',
+    word: 'frequency',
+    partOfSpeech: 'noun',
+    pronunciation: '/ˈfriːkwənsi/',
+    definition: 'The rate at which something occurs or is repeated over a particular period of time; or the number of sound/radio wave cycles per second.',
+    childFriendlyDefinition: 'How often something happens again and again, or the wave speed that tunes a radio station.',
+    exampleSentence: 'Meteorologists tracked the increasing frequency of summer thunderstorms across the valley.',
+    secondarySentence: 'Bats emit ultrasonic calls at a frequency far too high for human ears to detect.',
+    mnemonic: 'Frequent = happening a lot! Frequency measures HOW frequently waves or events repeat!',
+    synonyms: ['rate', 'regularity', 'recurrence', 'wavelength', 'tempo'],
+    antonyms: ['infrequency', 'rarity', 'irregularity'],
+    funFactOrContext: 'Sound and radio frequencies are measured in Hertz (Hz), named after physicist Heinrich Hertz—1 Hz equals one wave cycle per second!',
+    category: 'Nature & World',
+    unit: 2
+  },
+  {
+    id: 'techniques',
+    word: 'techniques',
+    partOfSpeech: 'noun (plural)',
+    pronunciation: '/tɛkˈniːks/',
+    definition: 'Skillful, specialized methods or procedures for accomplishing an artistic, scientific, or athletic task.',
+    childFriendlyDefinition: 'Clever methods, special moves, or practiced ways of doing something really well—like painting or swimming.',
+    exampleSentence: 'Master potters pass down glazing techniques that create shimmering ocean colors on clay.',
+    secondarySentence: 'Using spaced repetition and active recall are proven memory techniques for language learners.',
+    mnemonic: 'Tech-niques = technical tricks and practiced skills of a pro!',
+    synonyms: ['methods', 'approaches', 'skills', 'strategies', 'craftsmanship'],
+    antonyms: ['clumsiness', 'guesswork', 'improvisation'],
+    funFactOrContext: 'Derived from the ancient Greek word "tekhne", meaning art, craft, and skilled handiwork!',
+    category: 'Language & Thought',
+    unit: 2
+  },
+  {
+    id: 'pitch',
+    word: 'pitch',
+    partOfSpeech: 'noun / verb',
+    pronunciation: '/pɪtʃ/',
+    definition: 'The highness or lowness of a musical tone; a sports playing field; a persuasive presentation; or to throw/set up camp.',
+    childFriendlyDefinition: 'How high or squeaky vs. low and booming a sound is—or a soccer field, or tossing a baseball!',
+    exampleSentence: 'The choir director raised her hand to help the singers hit the exact high pitch of the melody.',
+    secondarySentence: 'Before sunset, the scouts worked together to pitch their waterproof tent beside the lake.',
+    mnemonic: 'Pitch a ball on the sports pitch, or sing at a high musical pitch!',
+    synonyms: ['tone', 'key', 'field', 'proposal', 'toss', 'hurl'],
+    antonyms: ['catch', 'dismantle', 'silence'],
+    funFactOrContext: '"Pitch" is one of English’s most versatile polysemous words, with over 15 distinct meanings across music, sports, business, and aviation!',
+    category: 'Nature & World',
+    unit: 2
+  },
+  {
+    id: 'daze',
+    word: 'daze',
+    partOfSpeech: 'noun / verb',
+    pronunciation: '/deɪz/',
+    definition: 'A state of stunned confusion, bewilderment, or dreamy distraction where one cannot think clearly.',
+    childFriendlyDefinition: 'Walking around feeling foggy, spacey, or stunned—like right after waking up from a deep nap.',
+    exampleSentence: 'Blinking in the bright stadium lights, the goalkeeper stood in a brief daze after making the diving save.',
+    secondarySentence: 'Waking up early on Sunday left Leo wandering toward the breakfast table in a sleepy daze.',
+    mnemonic: 'Rhymes with "haze" and "maze"—your brain feels lost in a dreamy fog!',
+    synonyms: ['stupor', 'trance', 'bewilderment', 'fog', 'shock', 'confusion'],
+    antonyms: ['clarity', 'alertness', 'focus', 'lucidity'],
+    funFactOrContext: 'Comes from Old Norse "dasa", originally describing someone exhausted and numb from freezing weather!',
+    category: 'Actions & States',
+    unit: 2
+  },
+  {
+    id: 'mood',
+    word: 'mood',
+    partOfSpeech: 'noun',
+    pronunciation: '/muːd/',
+    definition: 'A temporary state of mind or emotional feeling; or the overall emotional atmosphere created by a piece of writing, music, or film.',
+    childFriendlyDefinition: 'How you are feeling inside right now, or the spooky, joyful, or peaceful vibe a story makes you feel.',
+    exampleSentence: 'Candlelight and soft cello music set a mysterious mood inside the old theatre.',
+    secondarySentence: 'Stepping outside into the crisp spring sunshine instantly lifted everyone’s mood.',
+    mnemonic: 'M-O-O-D: Look at the two O’s like expressive eyes showing how a story or person feels!',
+    synonyms: ['atmosphere', 'ambiance', 'temperament', 'tone', 'spirit', 'vibe'],
+    antonyms: ['apathy', 'emotionlessness'],
+    funFactOrContext: 'In literature, "tone" is the author’s attitude, whereas "mood" is the emotional feeling the reader experiences!',
+    category: 'Actions & States',
+    unit: 2
+  },
+  {
+    id: 'deduce',
+    word: 'deduce',
+    partOfSpeech: 'verb',
+    pronunciation: '/dɪˈdjuːs/',
+    definition: 'To arrive at a fact or logical conclusion by reasoning systematically from known clues and evidence.',
+    childFriendlyDefinition: 'Figuring out the answer like a detective by putting all the clues and facts together.',
+    exampleSentence: 'From the wet umbrella and muddy boots by the door, Sherlock could easily deduce it was raining.',
+    secondarySentence: 'Astronomers deduce the composition of distant stars by analyzing the colors of their light.',
+    mnemonic: 'DE-duce = DE-tective! Detectives deduce the truth from clues!',
+    synonyms: ['infer', 'conclude', 'reason', 'figure out', 'gather', 'surmise'],
+    antonyms: ['guess', 'speculate', 'ignore', 'misjudge'],
+    funFactOrContext: 'Comes from Latin "deducere", meaning "to lead down" step-by-step from premises to a rock-solid conclusion.',
+    category: 'Language & Thought',
+    unit: 2
+  },
+  {
+    id: 'precise',
+    word: 'precise',
+    partOfSpeech: 'adjective',
+    pronunciation: '/prɪˈsaɪs/',
+    definition: 'Marked by exactness and accuracy of expression, measurement, or detail; strictly correct.',
+    childFriendlyDefinition: 'Super exact, careful, and spot-on, without any sloppy mistakes or guessing.',
+    exampleSentence: 'Baking delicate French macarons requires precise measurements of almond flour and sugar.',
+    secondarySentence: 'The watchmaker used tiny tweezers to place each microscopic gear in its precise position.',
+    mnemonic: 'Pre-CISE = cut to the exact millimeter like precision scissors!',
+    synonyms: ['exact', 'accurate', 'meticulous', 'specific', 'pinpoint', 'strict'],
+    antonyms: ['vague', 'imprecise', 'approximate', 'careless', 'rough'],
+    funFactOrContext: 'In science, "accurate" means close to the target bullseye, while "precise" means hitting the exact same spot consistently!',
+    category: 'Language & Thought',
+    unit: 2
+  },
+  {
+    id: 'vivid',
+    word: 'vivid',
+    partOfSpeech: 'adjective',
+    pronunciation: '/ˈvɪvɪd/',
+    definition: 'Producing powerful feelings or strong, clear, lifelike images in the mind; intensely bright and rich in color.',
+    childFriendlyDefinition: 'So colorful, bright, and full of life that you can picture it clearly in your head like a movie!',
+    exampleSentence: 'The novelist painted such a vivid description of the coral reef that readers almost felt the warm ocean currents.',
+    secondarySentence: 'A vivid double rainbow arched across the emerald hills after the downpour.',
+    mnemonic: 'VIV-id comes from "vivere" (to live)—colors and words bursting with life!',
+    synonyms: ['vibrant', 'striking', 'graphic', 'brilliant', 'lifelike', 'colorful'],
+    antonyms: ['dull', 'faded', 'vague', 'pale', 'lifeless'],
+    funFactOrContext: 'Shares its Latin root with "vivacious", "revive", and "survive"—all celebrating life and vitality!',
+    category: 'Nature & World',
+    unit: 2
+  },
+  {
+    id: 'rebel',
+    word: 'rebel',
+    partOfSpeech: 'noun / verb',
+    pronunciation: '/ˈrɛbəl/ (n.) · /rɪˈbɛl/ (v.)',
+    definition: 'A person who resists authority, control, or unfair convention; or to rise in opposition against established rules.',
+    childFriendlyDefinition: 'Someone brave or bold who stands up against unfair rules or refuses to copy the crowd.',
+    exampleSentence: 'Galileo was viewed as a scientific rebel when he argued that the Earth orbits around the Sun.',
+    secondarySentence: 'Young artists often rebel against old-fashioned traditions to invent fresh musical styles.',
+    mnemonic: 'RE-bel = ringing the bell again to challenge unfair rules!',
+    synonyms: ['dissident', 'revolutionary', 'nonconformist', 'maverick', 'defy', 'resist'],
+    antonyms: ['conformist', 'loyalist', 'obey', 'comply'],
+    funFactOrContext: 'Notice the stress shift! As a noun it is REB-el (/ˈrɛbəl/), while as a verb it shifts to re-BEL (/rɪˈbɛl/)!',
+    category: 'Character & People',
+    unit: 2
+  },
+  {
+    id: 'figurative',
+    word: 'figurative',
+    partOfSpeech: 'adjective',
+    pronunciation: '/ˈfɪɡjərətɪv/',
+    definition: 'Departing from a literal use of words to create imaginative, metaphorical, or symbolic meaning.',
+    childFriendlyDefinition: 'Using creative expressions like "it’s raining cats and dogs" instead of meaning the exact real-life words!',
+    exampleSentence: 'Saying "time is a thief" is a figurative expression using metaphor rather than a literal crime report.',
+    secondarySentence: 'Poets weave figurative language—such as similes and personification—to make emotions unforgettable.',
+    mnemonic: 'You have to "figure out" the creative picture behind figurative language!',
+    synonyms: ['metaphorical', 'symbolic', 'nonliteral', 'poetic', 'allegorical'],
+    antonyms: ['literal', 'factual', 'exact', 'verbatim'],
+    funFactOrContext: 'Whenever someone says their backpack "weighs a ton", they are using hyperbole—a classic form of figurative speech!',
+    category: 'Language & Thought',
+    unit: 2
   }
 ];
 

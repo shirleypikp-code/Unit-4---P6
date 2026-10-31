@@ -86,7 +86,7 @@ export const InsightsDashboard: React.FC<InsightsDashboardProps> = ({
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-300">
-            Neuroscience-backed spaced repetition diagnostics for your 20 target vocabulary words
+            Neuroscience-backed spaced repetition diagnostics for your {VOCABULARY_WORDS.length} target vocabulary words
           </p>
         </div>
 
@@ -108,7 +108,7 @@ export const InsightsDashboard: React.FC<InsightsDashboardProps> = ({
             <span className="text-2xl sm:text-3xl font-black text-amber-300 font-['Outfit']">
               {overallMasteryPct}%
             </span>
-            <span className="text-xs text-slate-500">of 20 words</span>
+            <span className="text-xs text-slate-500">of {VOCABULARY_WORDS.length} words</span>
           </div>
           <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden mt-2">
             <div
@@ -177,7 +177,7 @@ export const InsightsDashboard: React.FC<InsightsDashboardProps> = ({
           </div>
 
           <span className="text-xs font-mono font-bold text-indigo-300">
-            20 Words Total
+            {VOCABULARY_WORDS.length} Words Total
           </span>
         </div>
 
@@ -185,7 +185,7 @@ export const InsightsDashboard: React.FC<InsightsDashboardProps> = ({
         <div className="w-full h-4 bg-slate-950 rounded-xl overflow-hidden flex p-0.5 gap-0.5 border border-slate-800">
           {boxCounts.map((count, idx) => {
             if (count === 0) return null;
-            const pct = (count / 20) * 100;
+            const pct = (count / VOCABULARY_WORDS.length) * 100;
             return (
               <div
                 key={idx}
@@ -231,7 +231,7 @@ export const InsightsDashboard: React.FC<InsightsDashboardProps> = ({
             </>
           ) : (
             <>
-              Spectacular work! All 20 words have graduated past initial learning! Jump into a <strong>Word Battle</strong> to test your lightning-fast recall under pressure!
+              Spectacular work! All {VOCABULARY_WORDS.length} words have graduated past initial learning! Jump into a <strong>Word Battle</strong> to test your lightning-fast recall under pressure!
             </>
           )}
         </p>

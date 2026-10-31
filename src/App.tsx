@@ -213,7 +213,7 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-slate-950 py-4 text-center text-xs text-slate-500">
         <p className="max-w-xl mx-auto px-4">
-          LexiQuest • 20 Core Target Words • Spaced Repetition (SM-2) • Interactive Quizzes • Offline Capable
+          LexiQuest · {VOCABULARY_WORDS.length} Core Target Words · Spaced Repetition (SM-2) · Interactive Quizzes · Offline Capable
         </p>
       </footer>
     </div>

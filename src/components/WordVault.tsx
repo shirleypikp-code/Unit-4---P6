@@ -30,6 +30,7 @@ export const WordVault: React.FC<WordVaultProps> = ({
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [selectedUnit, setSelectedUnit] = useState<'all' | 1 | 2>('all');
 
   const filteredWords = VOCABULARY_WORDS.filter(w => {
     const matchesSearch =
@@ -38,8 +39,9 @@ export const WordVault: React.FC<WordVaultProps> = ({
       w.childFriendlyDefinition.toLowerCase().includes(searchQuery.toLowerCase());
 
     const matchesCategory = selectedCategory === 'All' || w.category === selectedCategory;
+    const matchesUnit = selectedUnit === 'all' || w.unit === selectedUnit;
 
-    return matchesSearch && matchesCategory;
+    return matchesSearch && matchesCategory && matchesUnit;
   });
 
   return (
@@ -48,19 +50,48 @@ export const WordVault: React.FC<WordVaultProps> = ({
       <div className="bg-slate-900/90 p-6 rounded-3xl border border-indigo-900/40 shadow-xl flex flex-wrap items-center justify-between gap-4">
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-white font-['Outfit'] flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-amber-400" /> Complete 20-Word Vault
+            <Sparkles className="w-5 h-5 text-amber-400" /> Complete {VOCABULARY_WORDS.length}-Word Vault
           </h2>
           <p className="text-xs sm:text-sm text-slate-300">
-            Study pronunciation, etymology, mnemonics, and real context sentences for all target words.
+            Study pronunciation, etymology, mnemonics, and real context sentences for all {VOCABULARY_WORDS.length} target words.
           </p>
         </div>
 
-        <button
-          onClick={() => onNavigateTab('practice')}
-          className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md transition"
-        >
-          <BrainCircuit className="w-4 h-4" /> Start SRS Review
-        </button>
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs">
+            <button
+              onClick={() => setSelectedUnit('all')}
+              className={`px-2.5 py-1.5 rounded-lg font-semibold transition ${
+                selectedUnit === 'all' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              All ({VOCABULARY_WORDS.length})
+            </button>
+            <button
+              onClick={() => setSelectedUnit(2)}
+              className={`px-2.5 py-1.5 rounded-lg font-semibold transition ${
+                selectedUnit === 2 ? 'bg-indigo-600 text-white' : 'text-amber-300 hover:text-amber-200'
+              }`}
+            >
+              Set 2 (New 20)
+            </button>
+            <button
+              onClick={() => setSelectedUnit(1)}
+              className={`px-2.5 py-1.5 rounded-lg font-semibold transition ${
+                selectedUnit === 1 ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              Set 1 (20)
+            </button>
+          </div>
+
+          <button
+            onClick={() => onNavigateTab('practice')}
+            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md transition"
+          >
+            <BrainCircuit className="w-4 h-4" /> Start SRS Review
+          </button>
+        </div>
       </div>
 
       {/* Search and Category Filter Bar */}

@@ -14,7 +14,7 @@ export const OfflineBanner: React.FC<OfflineBannerProps> = ({ isOnline }) => {
         <div className="flex items-center gap-2">
           <WifiOff className="w-4 h-4 text-amber-400 shrink-0" />
           <span>
-            <strong>Offline Mode Active:</strong> You can practice all 20 vocabulary words, take interactive quizzes, and review flashcards on the go without Wi-Fi! All data saves locally.
+            <strong>Offline Mode Active:</strong> You can practice all 40 vocabulary words, take interactive quizzes, and review flashcards on the go without Wi-Fi! All data saves locally.
           </span>
         </div>
         <div className="hidden sm:flex items-center gap-1.5 text-emerald-400 text-[11px] font-semibold shrink-0">

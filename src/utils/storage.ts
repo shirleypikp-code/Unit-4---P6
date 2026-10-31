@@ -62,11 +62,11 @@ export const BADGES: Badge[] = [
   {
     id: 'lexicon_conqueror',
     title: 'Lexicon Master',
-    description: 'Master all 20 target vocabulary words!',
+    description: `Master all ${VOCABULARY_WORDS.length} target vocabulary words!`,
     icon: '👑',
     category: 'mastery',
     tier: 'diamond',
-    target: 20,
+    target: VOCABULARY_WORDS.length,
     progress: (_, wordProgress) => {
       return Object.values(wordProgress).filter(p => p.box >= 4 || p.masteryScore >= 80).length;
     }
@@ -186,13 +186,24 @@ export function loadWordProgress(): Record<string, WordProgress> {
   try {
     const raw = localStorage.getItem(PROGRESS_KEY);
     if (raw) {
-      return JSON.parse(raw);
+      const parsed: Record<string, WordProgress> = JSON.parse(raw);
+      let addedNew = false;
+      VOCABULARY_WORDS.forEach((w) => {
+        if (!parsed[w.id]) {
+          parsed[w.id] = createInitialWordProgress(w.id);
+          addedNew = true;
+        }
+      });
+      if (addedNew) {
+        saveWordProgress(parsed);
+      }
+      return parsed;
     }
   } catch {
     // Fallback
   }
 
-  // Pre-initialize for all 20 words
+  // Pre-initialize for all vocabulary words
   const initialMap: Record<string, WordProgress> = {};
   VOCABULARY_WORDS.forEach((w, index) => {
     const prog = createInitialWordProgress(w.id);
